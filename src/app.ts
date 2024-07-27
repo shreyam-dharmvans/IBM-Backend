@@ -2,7 +2,8 @@ import express from "express";
 import postRouter from "./routes/postRoutes.js";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-import morgan from "morgan";
+//import morgan from "morgan";
+
 
 if (process.env.NODE_ENV != "production") {
     dotenv.config();
@@ -22,7 +23,7 @@ async function main() {
 
 const app = express();
 app.use(express.json());
-app.use(morgan("dev"));
+//app.use(morgan("dev"));
 
 app.use("/post", postRouter);
 
