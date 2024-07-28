@@ -10,15 +10,15 @@ if (process.env.NODE_ENV != "production") {
 //db connect
 main()
     .then(() => {
-    console.log("connected to ask-gpt database");
-})
+        console.log("connected to ask-gpt database");
+    })
     .catch(err => console.log(err));
 async function main() {
     await mongoose.connect(process.env.MONGODB_URL);
 }
 const app = express();
 app.use(express.json());
-app.use(cors({ origin: "https://5173-idx-ibm-skillsbuild-1721880470621.cluster-qpa6grkipzc64wfjrbr3hsdma2.cloudworkstations.dev/view-events", credentials: true }));
+app.use(cors({ origin: "https://5173-idx-ibm-skillsbuild-1721880470621.cluster-qpa6grkipzc64wfjrbr3hsdma2.cloudworkstations.dev", credentials: true }));
 //app.use(morgan("dev"));
 app.use("/post", postRouter);
 const port = process.env.PORT || 8000;
