@@ -10,8 +10,8 @@ if (process.env.NODE_ENV != "production") {
 //db connect
 main()
     .then(() => {
-        console.log("connected to ask-gpt database");
-    })
+    console.log("connected to ask-gpt database");
+})
     .catch(err => console.log(err));
 async function main() {
     await mongoose.connect(process.env.MONGODB_URL);
