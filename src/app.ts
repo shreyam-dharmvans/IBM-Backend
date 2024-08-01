@@ -25,7 +25,22 @@ async function main() {
 
 const app = express();
 app.use(express.json());
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+
+var whitelist = ['http://localhost:5173', 'https://5173-idx-ibm-skillsbuild-1721880470621.cluster-qpa6grkipzc64wfjrbr3hsdma2.cloudworkstations.dev', 'https://noPoverty-dy.netlify.app']
+
+// https://askgpt-ai.netlify.app/
+var corsOptions = {
+    origin: function (origin, callback) {
+        if (whitelist.indexOf(origin) !== -1) {
+            callback(null, true)
+        } else {
+            callback(new Error('Not allowed by CORS'))
+        }
+    }
+}
+
+app.use(cors(corsOptions));
+//{ origin: "http://localhost:5173", credentials: true }
 //app.use(morgan("dev"));
 
 
