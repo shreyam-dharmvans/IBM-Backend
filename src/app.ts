@@ -40,6 +40,7 @@ var corsOptions = {
 }
 
 app.use(cors(corsOptions));
+
 //{ origin: "http://localhost:5173", credentials: true }
 //app.use(morgan("dev"));
 
