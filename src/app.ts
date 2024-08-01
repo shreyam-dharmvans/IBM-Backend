@@ -26,7 +26,7 @@ async function main() {
 const app = express();
 app.use(express.json());
 
-var whitelist = ['http://localhost:5173', 'https://5173-idx-ibm-skillsbuild-1721880470621.cluster-qpa6grkipzc64wfjrbr3hsdma2.cloudworkstations.dev', 'https://noPoverty-dy.netlify.app']
+var whitelist = ['http://localhost:5173', 'https://5173-idx-ibm-skillsbuild-1721880470621.cluster-qpa6grkipzc64wfjrbr3hsdma2.cloudworkstations.dev', 'https://nopoverty-dy.netlify.app']
 
 // https://askgpt-ai.netlify.app/
 var corsOptions = {
